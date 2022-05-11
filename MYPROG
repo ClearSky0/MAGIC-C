@@ -1,0 +1,26 @@
+#	must be logged onto b:\mouse\large
+# Program: Magigraf
+#
+
+.c.obj:
+	qcl -c -AL $*.c
+
+magigraf.obj : magigraf.c
+
+menudrv.obj : menudrv.c
+
+mousedrv.obj : mousedrv.c
+
+fileopts.obj : fileopts.c
+
+drawopts.obj : drawopts.c
+
+prefopts.obj : prefopts.c
+
+b:\font\bpfnt.obj : b:\font\bpfnt.asm
+  cd b:\font
+  C:\masm\bin\masm /MX b:\font\bpfnt.asm
+  cd b:\mouse
+
+Magigraf.exe : magigraf.obj menudrv.obj mousedrv.obj fileopts.obj drawopts.obj b:\font\bpfnt.obj prefopts.obj
+		  link magigraf.obj menudrv.obj mousedrv.obj fileopts.obj drawopts.obj b:\font\bpfnt.obj prefopts.obj /NOI $(LDFLAGS);

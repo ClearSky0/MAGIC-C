@@ -1,0 +1,11 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+External=1
+DebugBuildCmd=NMAKE /f MAGIGRAF.MAK
+ReleaseBuildCmd=NMAKE /f MAGIGRAF.MAK
+RebuildOption=/a
+BuildMode=1
+TargetName=C:\TP\MAGIC-C\MAGIGRAF.EXE
+BrkptCount=0
+WatchCount=0
